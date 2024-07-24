@@ -1,6 +1,6 @@
 # Projeto Desenvolvido para Academia ATOS - Java
 
-Este projeto tem como objetivo revisar e avaliar os conhecimentos adquiridos na Academia de Java Web, além de servir como motivação para o projeto final do curso. Trata-se de uma aplicação web para gerenciar livros de uma biblioteca, com funcionalidades de autenticação de usuários.
+Este projeto tem como objetivo revisar e avaliar os conhecimentos adquiridos na Academia de Java Web. Trata-se de uma aplicação web para gerenciar livros de uma biblioteca, com funcionalidades de autenticação de usuários.
 
 O sistema foi desenvolvido por Fernanda Vieira e Vanessa Neves.
 
