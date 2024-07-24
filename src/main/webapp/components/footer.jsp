@@ -26,8 +26,8 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
             <a href="#" class="flex justify-center ">
-                <img class="dark:hidden "  src="./images/logfooter.png">
-                <img class="hidden dark:block"  src="./images/logodarkfooter.png">
+                <img class="dark:hidden "  src="./images/logfooter.png" title="Vananda Book">
+                <img class="hidden dark:block"  src="./images/logodarkfooter.png" title="Vananda Book">
             </a>
             <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-8 mb-5 border-b border-gray-200 ">
                 <li><a href="./FAQ.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">FAQ</a></li>

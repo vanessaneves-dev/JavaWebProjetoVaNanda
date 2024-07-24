@@ -31,24 +31,17 @@
         class="relative px-4 flex justify-between items-center  dark:bg-gray-900 border-b-2 dark:border-gray-600">
 
     <a href="./index.jsp" class="max-w-48">
-        <img class="dark:hidden " src="./images/logonav.png">
-        <img class="hidden dark:block" src="./images/logodarknav.png">
+        <img class="dark:hidden " src="./images/logonav.png" alt=" Logo Vananda Books" title="Vananda Book">
+        <img class="hidden dark:block" src="./images/logodarknav.png" alt="Logo Vananda Books" title="Vananda Book">
     </a>
 
-    <div class="lg:hidden">
-        <button class="navbar-burger flex items-center text-violet-600 dark:text-gray-100 p-1" id="navbar_burger">
-            <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Hamberger menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-        </button>
-    </div>
-
-    <div class="hidden lg:flex gap-2">
 
 
-        <a href="./home.jsp">
-            <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+    <div class=" flex  flex-wrap gap-2">
+
+
+        <a href="./home.jsp" >
+            <button class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
                 Coleção de Livros
             </button>
         </a>
@@ -56,19 +49,19 @@
 <c:choose>
     <c:when test="<%= isLoggedIn %>">
         <div>
-            <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
+
             <a
-               href="./newBook.jsp">
-                <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+               href="./newBook.jsp" >
+                <button class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
                 Cadastro de Livros
                 </button> </a>
         </div>
     </c:when>
     <c:otherwise>
         <div>
-        <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
+
         <a
-        href="./newUser.jsp"> <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+        href="./newUser.jsp"> <button class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
         Cadastre-se
         </button> </a>
         </div>
@@ -79,11 +72,11 @@
 <c:choose>
     <c:when test="<%= isLoggedIn %>">
     </div>
-        <p  class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center  dark:text-gray-300  rounded-md text-indigo-600 font-bold	 ">Bem-vindo(a) ${user.nome} </p>
+        <p  class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center  dark:text-gray-300  rounded-md text-indigo-600 font-bold	 ">Bem-vindo(a) ${user.nome} </p>
     <div>
     </c:when>
     <c:otherwise>
-            <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
+            <a class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
                href="./login.jsp">
                 Login
             </a>
@@ -93,12 +86,12 @@
         </div>
         <c:if test="${not empty sessionScope.user}">
             <div>
-                <a href="logout"  ><button  class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+                <a href="logout" title="Logout" ><button  class="lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
                 <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#f1f1f1" d="M3.5 8c0.3 0 0.5 0.2 0.5 0.5v2c0 0.3-0.2 0.5-0.5 0.5s-0.5-0.2-0.5-0.5v-2c0-0.3 0.2-0.5 0.5-0.5v0zM3.5 7v0c-0.8 0-1.5 0.7-1.5 1.5v2c0 0.8 0.7 1.5 1.5 1.5v0c0.8 0 1.5-0.7 1.5-1.5v-2c0-0.8-0.7-1.5-1.5-1.5v0z"></path> <path fill="#f1f1f1" d="M8 7v3.5c0 0.3-0.2 0.5-0.5 0.5s-0.5-0.2-0.5-0.5v-3.5h-1v3.5c0 0.8 0.7 1.5 1.5 1.5v0c0.8 0 1.5-0.7 1.5-1.5v-3.5h-1z"></path> <path fill="#f1f1f1" d="M13 7h-3v1h1v4h1v-4h1z"></path> <path fill="#f1f1f1" d="M15 6v-1h-2.4l-3.7-3c0.1-0.2 0.1-0.3 0.1-0.5 0-0.8-0.7-1.5-1.5-1.5s-1.5 0.7-1.5 1.5c0 0.2 0 0.3 0.1 0.5l-3.7 3h-2.4v9h1v1h15v-9h-1zM6.7 2.8c0.3 0.1 0.5 0.2 0.8 0.2s0.5-0.1 0.8-0.2l2.7 2.2h-7l2.7-2.2zM14 13h-13v-7h13v7z"></path> </g></svg>
                 </button> </a>
             </div>
         </c:if>
-        <button id="theme-toggle" type="button" class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+        <button id="theme-toggle" type="button" class="lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 " title="Mudar tema">
             <svg id="theme-toggle-dark-icon" class="w-5 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
                  xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>

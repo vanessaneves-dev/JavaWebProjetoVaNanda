@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Cadatro de Livros</title>
+    <title>Cadastro de Livro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -33,7 +33,7 @@
 <c:choose>
     <c:when test="<%= isLoggedIn %>">
 <section class="dark:bg-gray-900 border-b-2 dark:border-gray-600">
-    <a href="./home.jsp"  ><button  class="hidden ml-2 lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+    <a href="./home.jsp" title="Home" ><button  class="hidden ml-2 lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
         <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
     </button> </a>
     <div class=" bg-gray-100 border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl dark:bg-gray-900">
@@ -85,15 +85,13 @@
 </section>
         </c:when>
         <c:otherwise>
-        <section>
-            <a href="./index.jsp"  ><button  class="hidden ml-2 lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
-                <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
-            </button> </a>
+        <section class="dark:bg-gray-900 border-b-2 dark:border-gray-600">
             <div class="container mx-auto text-center py-20">
-                <h1 class="text-4xl mb-4">Acesso Negado</h1>
-                <p class="text-xl">Você não tem permissão para acessar esta página.</p>
-                <a href="login.jsp" class="mt-6 inline-block bg-white text-red-600 font-bold py-2 px-4 rounded">Voltar para o Login</a>
+                <h1 class="text-4xl mb-4 text-gray-600 dark:text-gray-300">Acesso Negado</h1>
+                <p class="text-xl text-gray-500 dark:text-gray-300">Você não tem permissão para acessar esta página.</p>
+                <a href="login.jsp" class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-4 rounded hover:scale-105 transition duration-300 ease-in-out">Voltar para o Login</a>
             </div>
+
         </section>
         </c:otherwise>
         </c:choose>
