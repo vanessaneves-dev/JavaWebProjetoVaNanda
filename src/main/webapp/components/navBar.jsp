@@ -44,7 +44,7 @@
         </button>
     </div>
 
-    <div class="hidden lg:flex gap-12">
+    <div class="hidden lg:flex gap-2">
 
 
         <a href="./home.jsp">
@@ -57,19 +57,20 @@
     <c:when test="<%= isLoggedIn %>">
         <div>
             <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
-            <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
+            <a
                href="./newBook.jsp">
+                <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
                 Cadastro de Livros
-            </a>
+                </button> </a>
         </div>
     </c:when>
     <c:otherwise>
         <div>
         <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
-        <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
-        href="./newUser.jsp">
+        <a
+        href="./newUser.jsp"> <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
         Cadastre-se
-        </a>
+        </button> </a>
         </div>
     </c:otherwise>
 </c:choose>
@@ -78,7 +79,7 @@
 <c:choose>
     <c:when test="<%= isLoggedIn %>">
     </div>
-        <p>Bem-vindo(a) ${user.nome} </p>
+        <p  class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center  dark:text-gray-300  rounded-md text-indigo-600 font-bold	 ">Bem-vindo(a) ${user.nome} </p>
     <div>
     </c:when>
     <c:otherwise>

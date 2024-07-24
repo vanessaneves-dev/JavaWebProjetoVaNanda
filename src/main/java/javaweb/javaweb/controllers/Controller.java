@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/login", "/newuser", "/home", "/cadastrar", "/atualizar", "/logout"})
+@WebServlet(urlPatterns = {"/login", "/newuser", "/home", "/cadastrar", "/atualizar", "/logout", "/termos"})
 @MultipartConfig
 public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
