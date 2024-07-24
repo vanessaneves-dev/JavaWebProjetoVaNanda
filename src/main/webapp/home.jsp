@@ -61,7 +61,7 @@
     <jsp:include page="components/navBar.jsp" />
 </header >
 
-<section class="dark:bg-gray-900 border-b-2 dark:border-gray-600 m-10" >
+<section class="dark:bg-gray-900 border-b-2 dark:border-gray-600 p-9" >
     <c:choose>
         <c:when test="<%= isLoggedIn %>">
             <a href="./home.jsp"  ><button  class="hidden lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
@@ -76,7 +76,7 @@
     </c:choose>
     <div class="py-8 max-w-screen-lg mx-auto">
         <div class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600">
+            <h1 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 dark:text-gray-300">
                 Coleção de <span class="text-indigo-600">Livros</span>
             </h1>
         </div>
@@ -90,29 +90,29 @@
                         <table class=" min-w-full rounded-xl ">
                             <thead>
                             <tr class="bg-gray-50">
-                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize rounded-t-xl"> ISBN </th>
-                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Título </th>
-                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Categoria </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize rounded-tl-lg"> ISBN </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize l"> Título </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize "> Categoria </th>
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Quantidade </th>
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Capa do Livro </th>
 
-                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize rounded-t-xl"> Acões </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize rounded-tr-lg"> Acões </th>
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-300 ">
 
                             <c:forEach var="book" items="<%=books%>">
-                                <tr class="bg-white transition-all duration-500 hover:bg-gray-50">
-                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">${book.isbn}</td>
-                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">${book.titulo}</td>
-                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">${book.categoria}</td>
-                                    <td>${book.quantidade}</td>
-                                    <td>
+                                <tr class="bg-white transition-all duration-500 hover:bg-gray-50 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 dark:border-b-2 ">
+                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 dark:text-gray-300  dark:border-gray-300 dark:border-2">${book.isbn}</td>
+                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 dark:text-gray-300  dark:border-gray-300 dark:border-2">${book.titulo}</td>
+                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 dark:text-gray-300  dark:border-gray-300 dark:border-2">${book.categoria}</td>
+                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 dark:text-gray-300  dark:border-gray-300 dark:border-2">${book.quantidade}</td>
+                                    <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 dark:text-gray-300  dark:border-gray-300 dark:border-2">
                                         <c:if test="${not empty book.imagem}">
                                             <img src="${book.imagem}" alt="${book.titulo}" style="max-width: 100px; max-height: 100px;">
                                         </c:if>
                                     </td>
-                                    <td class=" p-5 ">
+                                    <td class=" p-5 dark:border-gray-300 dark:border-b-2 ">
                                         <div class="flex items-center gap-1">
                                             <c:choose>
                                             <c:when test="<%= isLoggedIn %>">
@@ -150,6 +150,9 @@
             </div>
         </div>
   </section  >
+
+
+
 <jsp:include page="components/footer.jsp" />
 <script>
     function openDeleteModal(isbn) {

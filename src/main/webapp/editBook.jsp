@@ -39,7 +39,7 @@
     </button> </a>
     <div class=" bg-gray-100 border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl dark:bg-gray-900">
         <div class="text-center mb-8">
-            <h1 id="titulopage" class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 dark:text-gray-400">
+            <h1 id="titulopage" class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 dark:text-gray-300">
                 Editar <span class="text-indigo-600">Livro</span>
             </h1>
         </div>
@@ -51,11 +51,11 @@
             <input type="hidden" name="isbn" value="<%= livro.getIsbn() %>"/>
             <div class="mb-4">
                 <label for="titulo" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Título:</label>
-                <input type="text" id="titulo" name="titulo" value="<%= livro.getTitulo() %>" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" required/>
+                <input type="text" id="titulo" name="titulo" value="<%= livro.getTitulo() %>" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5  dark:border-gray-700" required/>
             </div>
             <div class="mb-4">
                 <label for="categoria" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Categoria:</label>
-                <select id="categoria" name="categoria" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" required>
+                <select id="categoria" name="categoria" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5  dark:border-gray-700" required>
                     <option value="">Selecione a categoria correspondente</option>
                     <option value="Ficção" <%= "Ficção".equals(livro.getCategoria()) ? "selected" : "" %>>Ficção</option>
                     <option value="Romance" <%= "Romance".equals(livro.getCategoria()) ? "selected" : "" %>>Romance</option>
@@ -64,11 +64,11 @@
             </div>
             <div class="mb-4">
                 <label for="quantidade" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" value="<%= livro.getQuantidade() %>" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" required/>
+                <input type="number" id="quantidade" name="quantidade" value="<%= livro.getQuantidade() %>" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5  dark:border-gray-700" required/>
             </div>
             <div class="mb-4">
                 <label for="imagem" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Imagem:</label>
-                <input type="file" id="imagem" name="imagem" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700"/>
+                <input type="file" id="imagem" name="imagem" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:border-gray-700"/>
 
             </div>
             <div class="p-6 border-t border-gray-200 rounded-b">
@@ -100,6 +100,7 @@
 </section>
     </c:otherwise>
 </c:choose>
+<jsp:include page="components/footer.jsp" />
 <script>
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');

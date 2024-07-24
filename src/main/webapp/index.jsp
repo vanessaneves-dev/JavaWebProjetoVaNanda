@@ -104,17 +104,17 @@
             </div>
             <!-- end can help image -->
 
-            <div class="flex-1 flex flex-col flex-wrap -mb-4 -mx-2 sm:flex-col md:flex-row dark:text-gray-300 sm:items-center" <%--class="flex-1 flex flex-col flex-wrap md:flex-nowrap -mb-4 -mx-2 dark:text-gray-300 sm:items-center"--%>>
+            <div class="flex-1 flex flex-col flex-wrap -mb-4 -mx-2 sm:flex-col md:flex-row  sm:items-center" <%--class="flex-1 flex flex-col flex-wrap md:flex-nowrap -mb-4 -mx-2 dark:text-gray-300 sm:items-center"--%>>
                 <div class="w-full sm:w-1/2 mb-4 px-2 ">
                     <div class="h-full py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl">
-                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600">Quem Somos:</h3>
-                        <p class="text-sm text-gray-700">Somos apaixonados por livros e acreditamos no poder transformador da leitura. Nossa missão é proporcionar acesso a uma vasta coleção de obras literárias para que todos possam desfrutar dos benefícios e do prazer de ler.</p>
+                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600 dark:text-gray-300">Quem Somos:</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Somos apaixonados por livros e acreditamos no poder transformador da leitura. Nossa missão é proporcionar acesso a uma vasta coleção de obras literárias para que todos possam desfrutar dos benefícios e do prazer de ler.</p>
                     </div>
                 </div>
                 <div class="w-full sm:w-1/2 mb-4 px-2 ">
                     <div class="h-full py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl">
-                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600">Benefícios da Leitura</h3>
-                        <ul class="text-sm text-gray-700">
+                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600 dark:text-gray-300">Benefícios da Leitura</h3>
+                        <ul class="text-sm text-gray-700 dark:text-gray-300">
                             <li>Desenvolvimento cognitivo e emocional</li>
                             <li>Expansão do vocabulário</li>
                             <li>Melhora na concentração e foco</li>
@@ -125,16 +125,16 @@
                 </div>
 
                 <div class="w-full sm:w-1/2 mb-4 px-2 ">
-                    <div class="h-full py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl">
-                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600">Fato Interessante</h3>
-                        <p class="text-sm text-gray-700">Você sabia que "Dom Quixote" de Miguel de Cervantes é considerado o primeiro romance moderno? Publicado em 1605, ele revolucionou a literatura com sua narrativa complexa e personagens profundos.</p>
+                    <div class="h-full py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl dark:text-gray-300">
+                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600 dark:text-gray-300">Fato Interessante</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Você sabia que "Dom Quixote" de Miguel de Cervantes é considerado o primeiro romance moderno? Publicado em 1605, ele revolucionou a literatura com sua narrativa complexa e personagens profundos.</p>
                     </div>
                 </div>
 
                 <div class="w-full sm:w-1/2 mb-4 px-2 ">
                     <div class="h-full py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl">
-                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600">Leia e Viaje</h3>
-                        <p class="text-sm text-gray-700">Descubra novos mundos e aventuras incríveis através da leitura. Clique abaixo e tenha acesso a uma vasta coleção de livros.</p>
+                        <h3 class="text-2xl font-bold text-md mb-6 text-gray-600 dark:text-gray-300">Leia e Viaje</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Descubra novos mundos e aventuras incríveis através da leitura. Clique abaixo e tenha acesso a uma vasta coleção de livros.</p>
                         <div class="flex content-end">
                             <a class=" lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
                                href="/listarLivros.jsp">
