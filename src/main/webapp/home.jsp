@@ -60,7 +60,20 @@
 <header >
     <jsp:include page="components/navBar.jsp" />
 </header >
+
 <section class="dark:bg-gray-900 border-b-2 dark:border-gray-600 m-10" >
+    <c:choose>
+        <c:when test="<%= isLoggedIn %>">
+            <a href="./home.jsp"  ><button  class="hidden lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+                <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+            </button> </a>
+        </c:when>
+        <c:otherwise>
+            <a href="./index.jsp"  ><button  class="hidden  lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+                <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+            </button> </a>
+        </c:otherwise>
+    </c:choose>
     <div class="py-8 max-w-screen-lg mx-auto">
         <div class="text-center mb-8">
             <h1 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600">
@@ -81,6 +94,8 @@
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Título </th>
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Categoria </th>
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Quantidade </th>
+                                <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize"> Capa do Livro </th>
+
                                 <th scope="col" class="p-5 text-left text-sm leading-6 font-semibold text-gray-900 capitalize rounded-t-xl"> Acões </th>
                             </tr>
                             </thead>
@@ -92,6 +107,11 @@
                                     <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">${book.titulo}</td>
                                     <td class="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">${book.categoria}</td>
                                     <td>${book.quantidade}</td>
+                                    <td>
+                                        <c:if test="${not empty book.imagem}">
+                                            <img src="${book.imagem}" alt="${book.titulo}" style="max-width: 100px; max-height: 100px;">
+                                        </c:if>
+                                    </td>
                                     <td class=" p-5 ">
                                         <div class="flex items-center gap-1">
                                             <c:choose>

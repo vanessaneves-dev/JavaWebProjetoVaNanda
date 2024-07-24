@@ -16,12 +16,14 @@ public class Book {
     private String titulo;
     private String categoria;
     private int quantidade;
+    private String imagem;
 
-    public Book(String isbn, String titulo, String categoria, int quantidade) {
+    public Book(String isbn, String titulo, String categoria, int quantidade, String imagem) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.categoria = categoria;
         this.quantidade = quantidade;
+        this.imagem = imagem;
     }
 
     @Override

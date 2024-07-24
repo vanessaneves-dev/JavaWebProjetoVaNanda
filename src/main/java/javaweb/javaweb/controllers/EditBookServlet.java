@@ -1,5 +1,7 @@
 package javaweb.javaweb.controllers;
 
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.Part;
 import javaweb.javaweb.dao.BookDao;
 import javaweb.javaweb.model.Book;
 import jakarta.servlet.ServletException;
@@ -9,8 +11,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Base64;
 
 @WebServlet("/editBook")
+@MultipartConfig
 public class EditBookServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private BookDao bookDao;
@@ -44,7 +49,7 @@ public class EditBookServlet extends HttpServlet {
         }
     }
 
-    private void updateBookDetails(HttpServletRequest request, Book book) {
+    private void updateBookDetails(HttpServletRequest request, Book book) throws ServletException, IOException {
         String titulo = request.getParameter("titulo");
         String categoria = request.getParameter("categoria");
         String quantidade = request.getParameter("quantidade");
@@ -56,7 +61,25 @@ public class EditBookServlet extends HttpServlet {
             book.setCategoria(categoria);
         }
         if (quantidade != null && !quantidade.isEmpty()) {
-            book.setQuantidade(Integer.parseInt(quantidade));
+            try {
+                int qtd = Integer.parseInt(quantidade);
+                if (qtd < 1) {
+                    qtd = 1;
+                }
+                book.setQuantidade(qtd);
+            } catch (NumberFormatException e) {
+                throw new ServletException("Quantidade deve ser um número válido.", e);
+            }
+        }
+
+        // Processar o upload da imagem
+        Part filePart = request.getPart("imagem");
+        if (filePart != null && filePart.getSize() > 0) {
+            try (InputStream inputStream = filePart.getInputStream()) {
+                byte[] imageBytes = inputStream.readAllBytes();
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                book.setImagem(base64Image);
+            }
         }
     }
 }

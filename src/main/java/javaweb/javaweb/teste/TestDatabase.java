@@ -16,7 +16,7 @@ public class TestDatabase {
 
 
         // Teste simples para persistir um objeto e verificar se a tabela é criada
-        Book book = new Book("455656786", "sdfg sdfgdfgdfg", "hfj jg", 5);
+        Book book = new Book("455656786", "sdfg sdfgdfgdfg", "hfj jg", 5, null);
         em.persist(book);
 
         em.getTransaction().commit();

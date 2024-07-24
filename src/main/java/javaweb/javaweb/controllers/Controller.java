@@ -1,5 +1,6 @@
 package javaweb.javaweb.controllers;
 
+import jakarta.servlet.annotation.MultipartConfig;
 import javaweb.javaweb.dao.*;
 import javaweb.javaweb.model.*;
 import javaweb.javaweb.service.AuthenticationService;
@@ -8,10 +9,12 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = {"/login", "/newuser", "/home", "/cadastrar", "/atualizar", "/logout"})
+@MultipartConfig
 public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
     @Inject
@@ -142,7 +145,7 @@ public class Controller extends HttpServlet {
         IsUser registerUser = authService.registerUser(newIsUser);
         if (registerUser != null) {
             request.getSession().setAttribute("existingUser", registerUser);
-            response.sendRedirect("/");
+            response.sendRedirect("login.jsp");
         } else {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Esse usuário já existe.");
         }
@@ -161,11 +164,13 @@ public class Controller extends HttpServlet {
         }
     }
 
-    private void handleAddBook(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void handleAddBook(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String isbn = request.getParameter("isbn");
         String titulo = request.getParameter("titulo");
         String categoria = request.getParameter("categoria");
         String quantidade = request.getParameter("quantidade");
+        Part filePart = request.getPart("imagem");
+        String imagem = null;
 
         int qtd;
         try {
@@ -178,7 +183,21 @@ public class Controller extends HttpServlet {
             return;
         }
 
-        Book book = new Book(isbn, titulo, categoria, qtd);
+        if (filePart != null && filePart.getSize() > 0) {
+            String fileName = filePart.getSubmittedFileName();
+            String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+            imagem = "uploads" + File.separator + fileName;
+            filePart.write(uploadPath + File.separator + fileName);
+        } else {
+            // Define um avatar padrão se nenhuma imagem for fornecida
+            imagem = "./images/livroAvatar.png";
+        }
+
+        Book book = new Book(isbn, titulo, categoria, qtd, imagem);
         bookDao.cadastrar(book);
         response.sendRedirect("home");
     }

@@ -33,13 +33,16 @@
 <c:choose>
     <c:when test="<%= isLoggedIn %>">
 <section class="dark:bg-gray-900 border-b-2 dark:border-gray-600">
+    <a href="./home.jsp"  ><button  class="hidden ml-2 lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+        <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+    </button> </a>
     <div class=" bg-gray-100 border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl dark:bg-gray-900">
         <div class="text-center mb-8">
             <h1 id="titulopage" class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-600 dark:text-gray-400">
                 Cadastre seu  <span class="text-indigo-600">Livro</span>
             </h1>
         </div>
-    <form action="cadastrar" method="post">
+    <form action="cadastrar" method="post" enctype="multipart/form-data">
         <div class="mb-4">
         <label for="isbn" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">ISBN:</label>
         <input type="text" id="isbn" name="isbn" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 " required/>
@@ -62,6 +65,10 @@
         <label for="quantidade" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Quantidade:</label>
         <input type="number" id="quantidade" name="quantidade" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" value="1" min="1" required/>
         </div>
+        <div class="mb-4">
+            <label for="imagem" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Imagem:</label>
+            <input type="file" id="imagem" name="imagem" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700"/>
+        </div>
         <div class="p-6 border-t border-gray-200 rounded-b">
 
             <button
@@ -79,6 +86,9 @@
         </c:when>
         <c:otherwise>
         <section>
+            <a href="./index.jsp"  ><button  class="hidden ml-2 lg:inline-block m-2 py-1.5 px-3  text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
+                <svg class=" " width="20" height="26" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_iconCarrier"><path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+            </button> </a>
             <div class="container mx-auto text-center py-20">
                 <h1 class="text-4xl mb-4">Acesso Negado</h1>
                 <p class="text-xl">Você não tem permissão para acessar esta página.</p>
