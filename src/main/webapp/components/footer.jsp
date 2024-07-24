@@ -26,7 +26,8 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
             <a href="#" class="flex justify-center ">
-                <img src="./images/logonav.png">
+                <img class="dark:hidden "  src="./images/logfooter.png">
+                <img class="hidden dark:block"  src="./images/logodarkfooter.png">
             </a>
             <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-8 mb-5 border-b border-gray-200 ">
                 <li><a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300">Home</a></li>

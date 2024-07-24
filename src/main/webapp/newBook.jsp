@@ -23,9 +23,15 @@
         }
     </script>
 </head>
+<%
+    Object user = session.getAttribute("user");
+    boolean isLoggedIn = (user != null);
+%>
 <body class="bg-gradient-to-r from-sky-400 ">
 <header >
     <jsp:include page="components/navBar.jsp" />
+<c:choose>
+    <c:when test="<%= isLoggedIn %>">
 <section class="dark:bg-gray-900 border-b-2 dark:border-gray-600">
     <div class=" bg-gray-100 border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl dark:bg-gray-900">
         <div class="text-center mb-8">
@@ -70,6 +76,17 @@
     </form>
     </div>
 </section>
+        </c:when>
+        <c:otherwise>
+        <section>
+            <div class="container mx-auto text-center py-20">
+                <h1 class="text-4xl mb-4">Acesso Negado</h1>
+                <p class="text-xl">Você não tem permissão para acessar esta página.</p>
+                <a href="login.jsp" class="mt-6 inline-block bg-white text-red-600 font-bold py-2 px-4 rounded">Voltar para o Login</a>
+            </div>
+        </section>
+        </c:otherwise>
+        </c:choose>
 
         <jsp:include page="components/footer.jsp" />
         <script>

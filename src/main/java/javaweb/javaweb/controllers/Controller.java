@@ -11,7 +11,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/login", "/newuser", "/home", "/cadastrar", "/atualizar"})
+@WebServlet(urlPatterns = {"/login", "/newuser", "/home", "/cadastrar", "/atualizar", "/logout"})
 public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
     @Inject
@@ -66,6 +66,9 @@ public class Controller extends HttpServlet {
             case "/login":
                 forwardToPage(request, response, "index.jsp");
                 break;
+            case "/logout":
+                handleLogout(request, response);
+                break;
             default:
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 break;
@@ -86,10 +89,15 @@ public class Controller extends HttpServlet {
             case "/cadastrar":
                 handleAddBook(request, response);
                 break;
+            case "/logout":
+                handleLogout(request, response);
+                break;
             default:
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 break;
         }
+
+
     }
 
    /* @Override
@@ -179,4 +187,12 @@ public class Controller extends HttpServlet {
             book.setQuantidade(Integer.parseInt(quantidade));
         }
     }*/
+
+    private void handleLogout(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        response.sendRedirect("login.jsp");
+    }
 }

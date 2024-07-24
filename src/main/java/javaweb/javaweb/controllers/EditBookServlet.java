@@ -22,6 +22,8 @@ public class EditBookServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         String isbn = request.getParameter("isbn");
         Book livro = bookDao.buscarLivroPorIsbn(isbn);
         request.setAttribute("livro", livro);

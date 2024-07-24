@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
     <title>navBar</title>
@@ -20,14 +21,18 @@
             }
         }
     </script>
-
+    <%
+        Object user = session.getAttribute("user");
+        boolean isLoggedIn = (user != null);
+    %>
 </head>
 <body>
 <nav
         class="relative px-4 flex justify-between items-center  dark:bg-gray-900 border-b-2 dark:border-gray-600">
 
     <a href="./index.jsp" class="max-w-48">
-        <img src="./imgs/logonav.png">
+        <img class="dark:hidden " src="./images/logonav.png">
+        <img class="hidden dark:block" src="./images/logodarknav.png">
     </a>
 
     <div class="lg:hidden">
@@ -41,26 +46,58 @@
 
     <div class="hidden lg:flex gap-12">
 
-        <a href="./home">
+
+        <a href="./home.jsp">
             <button class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
                 Coleção de Livros
             </button>
         </a>
 
+<c:choose>
+    <c:when test="<%= isLoggedIn %>">
         <div>
             <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
             <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
-               href="./newUser.jsp">
-                Cadastre-se
+               href="./newBook.jsp">
+                Cadastro de Livros
             </a>
         </div>
+    </c:when>
+    <c:otherwise>
+        <div>
+        <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
+        <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
+        href="./newuser.jsp">
+        Cadastre-se
+        </a>
+        </div>
+    </c:otherwise>
+</c:choose>
         <div>
             <%--<span class="hidden" id="util_data" data="{{ json_encode($util_data) }}"></span>--%>
+<c:choose>
+    <c:when test="<%= isLoggedIn %>">
+    </div>
+        <p>Bem-vindo(a) ${user.nome} </p>
+    <div>
+    </c:when>
+    <c:otherwise>
             <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
-               href="./index.jsp">
+               href="./login.jsp">
                 Login
             </a>
+
+    </c:otherwise>
+        </c:choose>
         </div>
+       <%-- <c:if test="${not empty sessionScope.user}">
+            <div>
+                <a class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 "
+                   onclick="href">
+                    Logout
+                </a>
+            </div>
+        </c:if>--%>
         <button id="theme-toggle" type="button" class="hidden lg:inline-block lg:ml-auto py-1.5 px-3 m-1 text-center bg-gradient-to-r dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg rounded-md text-white  hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-100 ">
             <svg id="theme-toggle-dark-icon" class="w-5 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
                  xmlns="http://www.w3.org/2000/svg">
