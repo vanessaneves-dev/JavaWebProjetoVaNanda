@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/excluir")
+@WebServlet("/deleteBookAction")
 public class DeleteBookServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private BookDao bookDao;
