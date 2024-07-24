@@ -193,6 +193,16 @@ public class Controller extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                cookie.setValue("");
+                cookie.setPath("/");
+                cookie.setMaxAge(0);
+                response.addCookie(cookie);
+            }
+        }
+
         response.sendRedirect("login.jsp");
     }
 }
