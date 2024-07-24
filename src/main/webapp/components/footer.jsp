@@ -30,10 +30,7 @@
                 <img class="hidden dark:block"  src="./images/logodarkfooter.png">
             </a>
             <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-8 mb-5 border-b border-gray-200 ">
-                <li><a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-300">Home</a></li>
-                <li><a href="./listarLivros.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">Coleção de Livros</a></li>
-                <li><a href="./cadastroUsuario.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">Cadastre-se</a></li>
-                <li><a href="./userLogin.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">Login</a></li>
+                <li><a href="./FAQ.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">FAQ</a></li>
                 <li><a href="./termos.jsp" class=" text-gray-600 hover:text-gray-900 dark:text-gray-300">Termos e Privacidade</a></li>
             </ul>
 

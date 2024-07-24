@@ -165,9 +165,20 @@ public class Controller extends HttpServlet {
         String isbn = request.getParameter("isbn");
         String titulo = request.getParameter("titulo");
         String categoria = request.getParameter("categoria");
-        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        String quantidade = request.getParameter("quantidade");
 
-        Book book = new Book(isbn, titulo, categoria, quantidade);
+        int qtd;
+        try {
+            qtd = Integer.parseInt(quantidade);
+            if (qtd < 1) {
+                qtd = 1; // Define a quantidade mínima como 1
+            }
+        } catch (NumberFormatException e) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Quantidade deve ser um número válido.");
+            return;
+        }
+
+        Book book = new Book(isbn, titulo, categoria, qtd);
         bookDao.cadastrar(book);
         response.sendRedirect("home");
     }

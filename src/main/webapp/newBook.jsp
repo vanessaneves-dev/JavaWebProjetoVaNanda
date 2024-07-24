@@ -60,7 +60,7 @@
         </div>
         <div class="mb-4">
         <label for="quantidade" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" required/>
+        <input type="number" id="quantidade" name="quantidade" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700" value="1" min="1" required/>
         </div>
         <div class="p-6 border-t border-gray-200 rounded-b">
 
