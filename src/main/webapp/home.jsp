@@ -50,7 +50,7 @@
             <div class="flex justify-center">
             <form id="deleteForm" action="deleteBookAction" method="post">
                 <input type="hidden" id="deleteIsbn" name="isbn" value="">
-                <button type="submit" class="text-white bg-indigo-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
+                <button type="submit" class="text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
                     Sim, tenho
                 </button>
             </form>

@@ -55,9 +55,15 @@
         <label for="categoria" class="block text-gray-700 font-medium mb-2 dark:text-gray-400">Categoria:</label>
         <select type="text" id="categoria" name="categoria"  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg -base focus:scale-105 ease-in-out duration-300 block w-full p-2.5 dark:border-gray-700"  require>
             <option value="">Selecione a categoria correspondente</option>
-            <option value="Ficção">Ficção</option>
+            <option value="Literatura Brasileira">Literatura Brasileira</option>
             <option value="Romance">Romance</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Infantojuvenil">Infantojuvenil</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Terror">Terror</option>
+            <option value="Suspense">Suspense</option>
             <option value="Tecnologia">Tecnologia</option>
+
         </select>
         </select>
         </div>
